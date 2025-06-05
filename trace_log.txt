@@ -1,13 +1,15 @@
 socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC, IPPROTO_IP) = 3
 bind(3, {sa_family=AF_INET, sin_port=htons(12345), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
 listen(3, 5)                            = 0
-accept4(3, {sa_family=AF_INET, sin_port=htons(56145), sin_addr=inet_addr("172.31.91.235")}, [16], SOCK_CLOEXEC) = 4
+accept4(3, {sa_family=AF_INET, sin_port=htons(56324), sin_addr=inet_addr("172.31.91.235")}, [16], SOCK_CLOEXEC) = 4
 getsockname(4, {sa_family=AF_INET, sin_port=htons(12345), sin_addr=inet_addr("172.31.90.54")}, [128 => 16]) = 0
-recvfrom(4, "abc", 1024, 0, NULL, NULL) = 3
-sendto(4, "97 98 99", 8, 0, NULL, 0)    = 8
-accept4(3, 0x7fff893c2550, [16], SOCK_CLOEXEC) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+recvfrom(4, "idk", 1024, 0, NULL, NULL) = 3
+sendto(4, "105 100 107", 11, 0, NULL, 0) = 11
+accept4(3, 0x7ffe94555fe0, [16], SOCK_CLOEXEC) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+accept4(3, 0x7ffe94555fe0, [16], SOCK_CLOEXEC) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
 getsockname(3, {sa_family=AF_INET, sin_port=htons(12345), sin_addr=inet_addr("0.0.0.0")}, [16]) = 0
-getpeername(3, 0x7fff893c21c0, [16])    = -1 ENOTCONN (전송 종료지점이 연결되어 있지 않습니다)
---- SIGINT {si_signo=SIGINT, si_code=SI_USER, si_pid=6418, si_uid=1000} ---
+getpeername(3, 0x7ffe94555c50, [16])    = -1 ENOTCONN (전송 종료지점이 연결되어 있지 않습니다)
+--- SIGINT {si_signo=SIGINT, si_code=SI_USER, si_pid=8339, si_uid=1000} ---
 +++ killed by SIGINT +++
